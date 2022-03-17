@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a9f10937bc4c4708953b7fbe065c827c" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="AburovModel.Agent" Width="1.5" PointX="3" PointY="10.375" />
+        <EntityTypeShape EntityType="AburovModel.AgentPriorityHistory" Width="1.5" PointX="5.25" PointY="19" />
+        <EntityTypeShape EntityType="AburovModel.AgentType" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="AburovModel.Material" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="AburovModel.MaterialCountHistory" Width="1.5" PointX="5.25" PointY="16.25" />
+        <EntityTypeShape EntityType="AburovModel.MaterialSupplier" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="AburovModel.MaterialType" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="AburovModel.Product" Width="1.5" PointX="3" PointY="6" />
+        <EntityTypeShape EntityType="AburovModel.ProductCostHistory" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="AburovModel.ProductMaterial" Width="1.5" PointX="5.25" PointY="6.75" />
+        <EntityTypeShape EntityType="AburovModel.ProductSale" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="AburovModel.ProductType" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="AburovModel.Shop" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="AburovModel.Supplier" Width="1.5" PointX="3" PointY="16.375" />
+        <EntityTypeShape EntityType="AburovModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="3.375" />
+        <AssociationConnector Association="AburovModel.FK_Agent_AgentType" />
+        <AssociationConnector Association="AburovModel.FK_AgentPriorityHistory_Agent" />
+        <AssociationConnector Association="AburovModel.FK_ProductSale_Agent" />
+        <AssociationConnector Association="AburovModel.FK_Shop_Agent" />
+        <AssociationConnector Association="AburovModel.FK_Material_MaterialType" />
+        <AssociationConnector Association="AburovModel.FK_MaterialCountHistory_Material" />
+        <AssociationConnector Association="AburovModel.FK_MaterialSupplier_Material" />
+        <AssociationConnector Association="AburovModel.FK_ProductMaterial_Material" />
+        <AssociationConnector Association="AburovModel.FK_MaterialSupplier_Supplier" />
+        <AssociationConnector Association="AburovModel.FK_Product_ProductType" />
+        <AssociationConnector Association="AburovModel.FK_ProductCostHistory_Product" />
+        <AssociationConnector Association="AburovModel.FK_ProductMaterial_Product" />
+        <AssociationConnector Association="AburovModel.FK_ProductSale_Product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

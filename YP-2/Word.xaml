@@ -1,0 +1,19 @@
+﻿<Window x:Class="YP_2.Word"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP_2"
+        mc:Ignorable="d"
+        Title="Экспорт в Word" Height="250" Width="600" Icon="/Resources/Черновик.ico">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Height="20" Width="200">Выберите необходимый отчет</TextBlock>
+            <Button Name="WordBtn" Height="20" Width="500" Margin="10,10,0,0" Click="WordBtn_Click"></Button>
+            <Button Name="WordBtn_2" Height="20" Width="500" Margin="10,10,0,0" Click="WordBtn_2_Click"></Button>
+            <Button Name="WordBtn_3" Height="20" Width="500" Margin="10,10,0,0" Click="WordBtn_3_Click"></Button>
+            <Button Name="WordBtn_4" Height="20" Width="500" Margin="10,10,0,0" Click="WordBtn_4_Click"></Button>
+            <Button Name="WordBtn_5" Height="20" Width="500" Margin="10,10,0,0" Click="WordBtn_5_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

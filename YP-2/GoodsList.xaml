@@ -1,0 +1,67 @@
+﻿<Page x:Class="YP_2.GoodsList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YP_2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GoodsList">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100">
+            </RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Height="30" Width="200" Margin="284,70,316,0" VerticalAlignment="Center" Name="TbCount">Записей:</TextBlock>
+        <TextBlock Grid.Row="0" Height="30" Width="100" Margin="790,10,33,60">Фильтрация</TextBlock>
+        <TextBlock Grid.Row="0" Height="30" Width="100" Margin="580,10,128,60">Сортировка</TextBlock>
+        <TextBlock Grid.Row="0" Height="30" Width="200" Margin="284,10,316,60">Введите для поиска</TextBlock>
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="AddBtn" Height="30" Width="120" Margin="0,-40,35,0" Click="AddClick">Добавить</Button>
+            <Button Name="ExportBtn" Height="30" Width="120" Margin="-155,40,35,0" Click="ExportBtn_Click">Экспорт в Word</Button>
+            <Button Name="EditMinBtn" Width="150" Height="30" Click="EditMinBtn_Click" FontSize="8" Visibility="Hidden" Grid.RowSpan="2">Изменить минимальное кол-во</Button>
+            <TextBox Name="TbSearch" Height="30" Width="250" Margin="35" BorderBrush="#FEA9AB" TextChanged="TbSearch_TextChanged"></TextBox>
+            <ComboBox Name="CbSort" Height="30" Width="120" Margin="0, 0, 35,0" BorderBrush="#FEA9AB" SelectionChanged="CbSort_SelectionChanged">
+                <ComboBoxItem>Название возр.</ComboBoxItem>
+                <ComboBoxItem>Название убыв.</ComboBoxItem>
+                <ComboBoxItem>Стоимость возр.</ComboBoxItem>
+                <ComboBoxItem>Стоимость убыв.</ComboBoxItem>
+                <ComboBoxItem>Остаток возр.</ComboBoxItem>
+                <ComboBoxItem>Остаток убыв.</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="CbFilt" Height="30" Width="120" Margin="0, 0, 35,0" BorderBrush="#FEA9AB" SelectionChanged="CbFilt_SelectionChanged"/>
+        </WrapPanel>
+        <ListView Grid.Row="1" Name="Goods" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended" SelectionChanged="Goods_SelectionChanged">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="5" CornerRadius="5" BorderThickness="1" BorderBrush="#FEA9AB" Background="{Binding MinColor}">
+                        <Grid Width="600" Height="100">
+                            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <Image Source="{Binding image}" HorizontalAlignment="Left" Height="70" Width="100"></Image>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding MaterialType.Title}">⠀| <TextBlock Text="{Binding Title}"></TextBlock> </TextBlock>
+                                    <TextBlock Text="{Binding Title}"></TextBlock>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding MinCount, StringFormat={}Минимальное количество: {0} шт.}"></TextBlock>
+                                        <TextBlock Width="450" TextWrapping="Wrap" Name="TbSupplier" Loaded="TbSupplier_Loaded" Uid="{Binding ID}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right">
+                                <TextBlock Text="{Binding CountInStock, StringFormat={}Остаток: {0} шт.}"></TextBlock>
+                                <Button Name="BtnEdit" Uid="{Binding ID}" Click="BtnEdit_Click">Редактировать</Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
