@@ -17,6 +17,8 @@ namespace YP_2
     /// <summary>
     /// Логика взаимодействия для Word.xaml
     /// </summary>
+    /// 
+    /// пока что не работает
     public partial class Word : Window
     {
         public Word()
